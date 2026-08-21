@@ -7,6 +7,8 @@ Privacy is guaranteed using **Single-Release Laplace Output Differential Privacy
 ---
 
 ## Architectural & Theoretical Enhancements
+<img width="3600" height="3000" alt="plot_feature_importance" src="https://github.com/user-attachments/assets/e86fd312-c50b-4eba-8bae-81075cfe0b12" />
+<img width="2550" height="1800" alt="plot_accuracy" src="https://github.com/user-attachments/assets/1b4dab82-711a-427e-aa47-b11791a9e630" />
 
 ### 1. Privacy-Preserving Federated Feature Statistics Aggregation (Zero Data Leakage)
 To eliminate raw data leakage while ensuring consistent feature normalization across client nodes, clients share only scalar training statistics $(\mu_i, \sigma_i^2, N_i)$ with the central server:
