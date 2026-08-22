@@ -64,28 +64,47 @@ Severe Event         0          2          0          46
 
 ---
 
-## Repository Structure
+├── README.md
+├── LICENSE
+├── run.txt
+│
+├── server.py
+├── split_data.py
+├── machine.py
+├── machine1.py
+├── machine2.py
+├── machine3.py
+│
+├── compare_datasets.py
+├── explain.py
+├── encoding_mappings.json
+│
+├── Federated-data.xlsx
+├── health_data_balanced_after_overfitting.xlsx
+│
+├── plot_accuracy.png
+├── plot_dp_laplace.png
+├── plot_dataset_sizes.png
+├── plot_confusion_matrix.png
+└── plot_feature_importance.png
 
-```text
-├── README.md                                 # Project documentation and reproduction guide
-├── run.txt                                   # Plaintext log of verified experiment results
-├── server.py                                 # Central server script for FedAvg aggregation and evaluation
-├── split_data.py                             # Data partitioning script implementing Dirichlet non-IID split
-├── machine.py                                # Runner script for standalone client training and evaluation
-├── machine1.py                               # Client 1 implementation
-├── machine2.py                               # Client 2 implementation
-├── machine3.py                               # Client 3 implementation
-├── health_data_balanced_after_overfitting.xlsx # Primary Excel dataset containing patient telemetry
-├── plot_accuracy.png                         # Accuracy progression across communication rounds
-├── plot_dp_laplace.png                       # Laplace noise scale curves for different epsilon values
-├── plot_dataset_sizes.png                    # Label distribution plot for each client partition
-└── plot_confusion_matrix.png                 # Multi-class confusion matrix on global model test set
 ```
+### Key Files
 
+- `server.py` — Central server for federated aggregation and evaluation
+- `split_data.py` — Creates non-IID client data partitions
+- `machine.py` — Client training and evaluation runner
+- `machine1.py`, `machine2.py`, `machine3.py` — Federated client implementations
+- `compare_datasets.py` — Dataset comparison and validation
+- `explain.py` — Explainable AI and SHAP analysis
+- `encoding_mappings.json` — Feature encoding mappings
+- `health_data_balanced_after_overfitting.xlsx` — Main health telemetry dataset
+- `Federated-data.xlsx` — Federated dataset
+- `run.txt` — Experimental execution log
 ---
-
+```
 ## How to Run
-
+```
 ### 1. Partition Data
 Run the data splitter to partition unscaled raw features and interaction ratios:
 
@@ -104,18 +123,19 @@ python server.py -e 0.5
 ```
 
 ### 4. Run Baseline Without Privacy
+
 ```bash
 python server.py --no-dp
 ```
 ## Explainable AI with SHAP
 
-The system integrates SHAP (SHapley Additive exPlanations) to improve the interpretability of machine learning predictions.
+The system integrates **SHAP (SHapley Additive exPlanations)** to improve the interpretability and transparency of machine learning predictions.
 
-SHAP is used to analyze how individual health-related features contribute to model predictions.
+SHAP analyzes how individual health-related features contribute to model predictions and helps explain the decisions made by the trained model.
 
-Key capabilities include:
+### Key Capabilities
 
-- Global feature importance analysis
-- Individual prediction explanations
-- Identification of influential health parameters
-- Transparent interpretation of model decisions
+- **Global Feature Importance** — Identifies the most influential health features across predictions.
+- **Individual Prediction Explanations** — Explains why the model makes a specific prediction.
+- **Influential Health Parameters** — Highlights health parameters that strongly affect model decisions.
+- **Transparent Model Interpretation** — Provides interpretable insights into the model's predictions.
