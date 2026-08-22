@@ -107,3 +107,15 @@ python server.py -e 0.5
 ```bash
 python server.py --no-dp
 ```
+## Explainable AI with SHAP
+
+The system integrates SHAP (SHapley Additive exPlanations) to improve the interpretability of machine learning predictions.
+
+SHAP is used to analyze how individual health-related features contribute to model predictions.
+
+Key capabilities include:
+
+- Global feature importance analysis
+- Individual prediction explanations
+- Identification of influential health parameters
+- Transparent interpretation of model decisions
